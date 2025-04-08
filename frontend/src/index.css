@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+    background: #fff;
+    font-family: 'Staatliches', sans-serif;
+    color:#4AB1EC;
+    overflow-x: hidden;
+}
+
+.roboto {
+    font-family: 'Roboto', sans-serif;
+  }
+
+.inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.sans {
+  font-family: 'DM Sans', sans-serif;
+}
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }

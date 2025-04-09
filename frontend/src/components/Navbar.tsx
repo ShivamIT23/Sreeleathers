@@ -1,7 +1,7 @@
 import Button from "./Sub/Button";
 
 export default function Navbar() {
-  const scrollToSection = (id) => {
+  const scrollToSection = (id:string) => {
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });

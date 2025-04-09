@@ -1,3 +1,4 @@
+import About from "./Sub/About";
 import Category from "./Sub/Category";
 import Form from "./Sub/Form";
 import Franchise from "./Sub/Franchise";
@@ -69,6 +70,7 @@ export default function Main() {
       </section>
       <Franchise />
       <Form />
+      <About />
     </main>
   );
 }

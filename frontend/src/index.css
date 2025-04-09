@@ -42,3 +42,7 @@ body{
 .boxShadow{
   box-shadow: 0px 4px 4px 0px #00000040;
 }
+
+.boxShadowHover:hover{
+  box-shadow: 0px 4px 4px 0px #00000040;
+}

@@ -81,7 +81,7 @@ function Collection({ card }: { card: { src: string; title: string } }) {
       <img
         src={card.src}
         alt="ProductImg"
-        className="object-contain aspect-square rounded-xl max-h-[500px] w-full"
+        className="object-contain boxShadowHover transition aspect-square rounded-xl max-h-[500px] w-full"
       />
       <div className="w-full flex items-center justify-center min-h-[32px]">
         <h3 className="font-semibold inter text-2xl text-center ">

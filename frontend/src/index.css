@@ -9,8 +9,14 @@ html {
 body{
     background: #fff;
     font-family: 'Staatliches', sans-serif;
-    color:#4AB1EC;
+    color:#03A3D3;
     overflow-x: hidden;
+}
+
+.bg-div {
+  background-image: url('/backCover1.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 .roboto {
@@ -28,3 +34,11 @@ body{
   *, *::before, *::after {
     box-sizing: border-box;
   }
+
+.shadow:hover {
+  box-shadow: 3px 5px 4px 0px #00000040;
+}
+
+.boxShadow{
+  box-shadow: 0px 4px 4px 0px #00000040;
+}

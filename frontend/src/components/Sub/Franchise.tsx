@@ -14,7 +14,7 @@ const franchiseList2 = [
 
 export default function Franchise() {
   return (
-    <section className="my-[8vh] px-[15vw] flex justify-center h-fit min-h-svh w-svw">
+    <section className="my-[8vh] px-[15vw] flex justify-center h-fit min-h-[60svh] w-svw">
       <div className="flex flex-col gap-6 py-10 px-4 sm:p-10 rounded-xl min-h-full h-fit w-full bg-div">
         <div className="flex flex-col items-center justify-center font-normal gap-4">
           <h3 className="text-3xl md:text-5xl">HOW TO GET OUR FRANCHISE</h3>

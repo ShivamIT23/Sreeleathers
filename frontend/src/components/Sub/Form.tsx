@@ -11,11 +11,32 @@ export default function Form() {
   const [GSTDetails, setGSTDetails] = useState("");
   const [propertyAddress, setPropertyAddress] = useState("");
   const [natureOfProperty, setNatureOfProperty] = useState("");
+  const [googleLocationOftheProperty, setGoogleLocationOftheProperty] =
+    useState("");
+  const [propertyImageVideo, setPropertyImageVideo] = useState<File | null>();
   const [last3YearTurnover, setLast3YearTurnover] = useState("");
   const [leasePeriod, setLeasePeriod] = useState("");
   const [referredBy, setReferredBy] = useState("");
   const [balanceSheet, setBalanceSheet] = useState("");
   const [specialRemarks, setSpecialRemarks] = useState("");
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (!propertyImageVideo) return;
+
+    const isImage = propertyImageVideo.type.startsWith("image/");
+    const isVideo = propertyImageVideo.type.startsWith("video/");
+
+    if (isImage) {
+      console.log("Selected image:", propertyImageVideo.name);
+      // handle image preview or upload
+    } else if (isVideo) {
+      console.log("Selected video:", propertyImageVideo.name);
+      // handle video preview or upload
+    } else {
+      console.log("Unsupported file type.");
+    }
+  }
   return (
     <section className="mb-[8vh] px-[10vw] flex justify-center h-fit min-h-svh w-svw">
       <div className="flex flex-col items-center justify-center font-normal gap-8 py-10 px-4 sm:p-10 rounded-xl min-h-full h-fit w-full bg-div">
@@ -23,6 +44,7 @@ export default function Form() {
           PROSPECT FRANCHISEE KYC & BUSINESS DETAILS
         </h3>
         <form
+          onSubmit={(e) => handleSubmit(e)}
           action="post"
           className="min-h-svh h-fit max-w-full grid md:grid-cols-2 gap-x-6 gap-y-10"
         >
@@ -98,34 +120,69 @@ export default function Form() {
               placeholder="Property nature"
             />
             <FormField
+              type="url"
+              label="Google Location of the Property"
+              id="googleLocationOftheProperty"
+              value={googleLocationOftheProperty}
+              onChange={(e) => setGoogleLocationOftheProperty(e.target.value)}
+              placeholder="Paste Link"
+            />
+          </div>
+          <div className="flex flex-col gap-2 sans min-h-[176px]">
+            <label htmlFor="propertyImageVideo" className="text-2xl font-bold">
+              Property Images & Videos
+            </label>
+            <div className="h-full relative w-[70%] rounded-xl md:w-[30%] bg-white">
+              <input
+                type="file"
+                accept="image/*,video/*"
+                id="propertyImageVideo"
+                onChange={(e) => {
+                  if (!e.target.files) return;
+                  setPropertyImageVideo(e.target.files[0]);
+                }}
+                className="hidden"
+              />
+              <label
+                htmlFor="propertyImageVideo"
+                className="cursor-pointer w-full h-full flex items-center justify-center border-2 border-[#979797] max-w-[70vw] sans text-[#575757] font-normal md:text-[128px] boxShadow rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-5xl"
+              >
+                +
+              </label>
+            </div>
+          </div>
+          <div className="flex flex-col gap-10 sans h-fit">
+            <FormField
               label="Last 3 Year Business Turnover"
               id="last3YearBusinessTurnover"
               value={last3YearTurnover}
               onChange={(e) => setLast3YearTurnover(e.target.value)}
               placeholder="Turnover"
             />
+            <FormField
+              label="Referred By"
+              id="referredBy"
+              value={referredBy}
+              onChange={(e) => setReferredBy(e.target.value)}
+              placeholder="Reference"
+            />
           </div>
-          <FormField
-            label="Property Agreement Lease Period"
-            id="propertyAgreementLeasePeriod"
-            value={leasePeriod}
-            onChange={(e) => setLeasePeriod(e.target.value)}
-            placeholder="Lease Period"
-          />
-          <FormField
-            label="Referred By"
-            id="referredBy"
-            value={referredBy}
-            onChange={(e) => setReferredBy(e.target.value)}
-            placeholder="Reference"
-          />
-          <FormField
-            label="Audited Balance Sheet"
-            id="auditedBalanceSheet"
-            value={balanceSheet}
-            onChange={(e) => setBalanceSheet(e.target.value)}
-            placeholder="Balance Sheet"
-          />
+          <div className="flex flex-col gap-10 sans h-fit">
+            <FormField
+              label="Property Agreement Lease Period"
+              id="propertyAgreementLeasePeriod"
+              value={leasePeriod}
+              onChange={(e) => setLeasePeriod(e.target.value)}
+              placeholder="Lease Period"
+            />
+            <FormField
+              label="Audited Balance Sheet"
+              id="auditedBalanceSheet"
+              value={balanceSheet}
+              onChange={(e) => setBalanceSheet(e.target.value)}
+              placeholder="Balance Sheet"
+            />
+          </div>
           <FormTextAreaField
             label="Special Remarks"
             id="specialRemarks"
@@ -153,7 +210,10 @@ export default function Form() {
           </div>
           <div className="w-full max-w-[70vw] col-span-full flex justify-center">
             <div className="rounded-[100px] w-fit min-w-20 bg-[linear-gradient(to_bottom,_#03A3D3,_#0A92C1)] py-3 px-5 gap-2 flex md:whitespace-nowrap shadow transition">
-              <button type="submit" className="bg-inherit text-white w-fit h-fit roboto font-medium md:text-[16px]">
+              <button
+                type="submit"
+                className="bg-inherit text-white w-fit h-fit roboto font-medium md:text-[16px]"
+              >
                 Submit
               </button>
             </div>
@@ -180,7 +240,10 @@ const FormField = ({
   placeholder: string;
 }) => {
   return (
-    <div id="contact" className="flex flex-col gap-2 sans max-w-full min-h-[88px]">
+    <div
+      id="contact"
+      className="flex flex-col gap-2 sans max-w-full min-h-[88px]"
+    >
       <label htmlFor={id} className="sm:text-2xl font-bold">
         {label}
       </label>

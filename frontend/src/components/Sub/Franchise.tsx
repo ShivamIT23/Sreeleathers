@@ -1,15 +1,3 @@
-const franchiseList1 = [
-  "Franchise Agreement Term",
-  "Five Years franchisee Right On Renewal Basis",
-  "Lock – In Period",
-  "24 months + 6 month (Notice): 30 Months",
-  "Agreement Renewal",
-  "On mutual consent for another 5 years term or as per the then new policy",
-  "Store Size : Option1",
-  "Express Format: Upto 1800 SFT (As per Town and space availability)",
-  "Store Size : Option2",
-  "Standard Format: Beyond 2000 Upto 3000 SFT (Applicable for State Capitals / Grade A Towns)",
-];
 
 const franchiseList2 = [
   "Trade Licenses,Shop Establishment, Fire License, Labor License , GST etc.",
@@ -40,15 +28,9 @@ export default function Franchise() {
           </p>
         </div>
         <div className="flex flex-col items-start justify-center gap-6 sans">
-          <h3 className="font-bold text-xl sm:text-2xl md:text-4xl">
+        <h3 className="font-bold text-xl sm:text-2xl md:text-4xl">
             Franchise Owned Franchisee Operated Model (FOFO)
           </h3>
-          <SubFranchise
-            title="Sreeleathers - Exclusive Store Franchise Policy"
-            list={franchiseList1}
-          />
-        </div>
-        <div className="flex flex-col items-start justify-center gap-6 sans">
           <SubFranchise
             title="Compliances & Operational Expenses to be done by Franchise"
             list={franchiseList2}

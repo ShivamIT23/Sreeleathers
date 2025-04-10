@@ -27,10 +27,10 @@ export default function Footer() {
           Ladies Bag
         </p>
         <p
-          onClick={() => scrollToSection("men's_bag")}
+          onClick={() => scrollToSection("men's_shoes")}
           className="cursor-pointer"
         >
-          Men's Bag
+          Men's Shoes
         </p>
         <p onClick={() => scrollToSection("bags")} className="cursor-pointer">
           Bags

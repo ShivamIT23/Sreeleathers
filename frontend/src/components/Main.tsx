@@ -59,7 +59,7 @@ export default function Main() {
       </section>
       <Category />
       <section className="bg-div min-h-[40vh] h-fit flex flex-col justify-between pt-[6vh] pb-[10vh] px-[8vw] font-bold sans text-[16px]">
-        <h2 className="w-full flex justify-center font-bold text-3xl sm:text-5xl py-[3vh] text-center">
+        <h2 className="w-full flex justify-center stans font-normal text-3xl sm:text-5xl py-[3vh] text-center">
           POPULAR COLLECTION
         </h2>
         <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">

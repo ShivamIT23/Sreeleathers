@@ -19,6 +19,10 @@ body{
   background-position: center;
 }
 
+.stans{
+  font-family: 'Staatliches', sans-serif;
+}
+
 .roboto {
     font-family: 'Roboto', sans-serif;
   }

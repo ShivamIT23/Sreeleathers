@@ -84,7 +84,7 @@ function Collection({ card }: { card: { src: string; title: string } }) {
         className="object-contain boxShadowHover transition aspect-square rounded-xl max-h-[500px] w-full"
       />
       <div className="w-full flex items-center justify-center min-h-[32px]">
-        <h3 className="font-semibold inter text-2xl text-center ">
+        <h3 className="font-semibold inter text-2xl text-center pt-3">
           {card.title}
         </h3>
       </div>

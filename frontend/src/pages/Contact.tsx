@@ -52,9 +52,6 @@ export default function ContactPage() {
             onChange={(e) => setEmailAddress(e.target.value)}
             placeholder="khushboo@gmail.com"
           />
-          <div>
-            
-          </div>
           <FormTextAreaField
             label="Message"
             id="message"

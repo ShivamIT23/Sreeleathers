@@ -23,7 +23,8 @@ export default function FormTextAreaField({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className="border-2 border-[#979797] max-w-[70vw] h-full mb-2 text-[#444444] font-normal text-sm md:text-[16px] boxShadow rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        rows={1} // ensures it behaves like a single-line input
+        className="border-2 border-[#979797] max-w-[70vw] h-full mb-2 text-[#444444] font-normal text-sm md:text-[16px] boxShadow rounded-xl px-3 pt-2 resize-none overflow-hidden leading-[1.2] focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
     </div>
   );

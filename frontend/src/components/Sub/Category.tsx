@@ -28,7 +28,10 @@ export default function Category() {
 
 function Card({ card }: { card: { src: string; title: string } }) {
   return (
-    <article className="flex flex-col col-span-1 w-full max-h-[675px]">
+    <article
+      id={card.title.replace(/ /g, "_")}
+      className="flex flex-col col-span-1 w-full max-h-[675px]"
+    >
       <img
         src={card.src}
         alt="ProductImg"

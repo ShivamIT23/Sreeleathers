@@ -46,3 +46,25 @@ body{
 .boxShadowHover:hover{
   box-shadow: 0px 4px 4px 0px #00000040;
 }
+
+.about-text {
+  margin-bottom: 8px;
+}
+
+.clamped {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.read-more-btn {
+  color: #00a1df;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0;
+  font-size: 14px;
+}

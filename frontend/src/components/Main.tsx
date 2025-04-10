@@ -1,7 +1,7 @@
-import About from "./Sub/About";
-import Category from "./Sub/Category";
-import Form from "./Sub/Form";
-import Franchise from "./Sub/Franchise";
+import About from "../components/Sub/About";
+import Category from "../components/Sub/Category";
+import Form from "../components/Sub/Form";
+import Franchise from "../components/Sub/Franchise";
 
 const collection = [
   {
@@ -47,12 +47,12 @@ export default function Main() {
             <img
               src="/Img3.png"
               alt=""
-              className="object-cover h-full p-[10px] lg:w-[50%]"
+              className="object-contain lg:object-cover w-full lg:h-full p-[10px] lg:w-[50%]"
             />
             <img
               src="/Img4.png"
               alt=""
-              className="p-[10px] object-cover lg:w-[50%]"
+              className="p-[10px] w-full object-contain lg:object-cover lg:w-[50%]"
             />
           </div>
         </div>

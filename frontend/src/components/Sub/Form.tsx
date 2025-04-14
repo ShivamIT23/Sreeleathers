@@ -17,10 +17,6 @@ export default function Form() {
     useState("");
   const [propertyImageVideo, setPropertyImageVideo] = useState<File | null>();
   const [last3YearTurnover, setLast3YearTurnover] = useState("");
-  const [leasePeriod, setLeasePeriod] = useState("");
-  const [referredBy, setReferredBy] = useState("");
-  const [balanceSheet, setBalanceSheet] = useState("");
-  const [specialRemarks, setSpecialRemarks] = useState("");
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -161,37 +157,7 @@ export default function Form() {
               onChange={(e) => setLast3YearTurnover(e.target.value)}
               placeholder="Turnover"
             />
-            <FormField
-              label="Referred By"
-              id="referredBy"
-              value={referredBy}
-              onChange={(e) => setReferredBy(e.target.value)}
-              placeholder="Reference"
-            />
           </div>
-          <div className="flex flex-col gap-10 sans h-fit">
-            <FormField
-              label="Property Agreement Lease Period"
-              id="propertyAgreementLeasePeriod"
-              value={leasePeriod}
-              onChange={(e) => setLeasePeriod(e.target.value)}
-              placeholder="Lease Period"
-            />
-            <FormField
-              label="Audited Balance Sheet"
-              id="auditedBalanceSheet"
-              value={balanceSheet}
-              onChange={(e) => setBalanceSheet(e.target.value)}
-              placeholder="Balance Sheet"
-            />
-          </div>
-          <FormTextAreaField
-            label="Special Remarks"
-            id="specialRemarks"
-            value={specialRemarks}
-            onChange={(e) => setSpecialRemarks(e.target.value)}
-            placeholder="Remarks"
-          />
           <div className="min-h-[162px] max-w-[70vw] flex flex-col w-full gap-2 px-[3vw] col-span-full text-[16px]">
             <h3 className="inter font-bold w-full flex justify-center">Note</h3>
             <ul className="list-disc iter font-normal pl-6 flex flex-col gap-6">

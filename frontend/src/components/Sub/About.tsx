@@ -1,4 +1,5 @@
 import { useState } from "react";
+import OurGallery from "./OurGallery";
 
 const images = [
   "Img14.jpeg",
@@ -47,6 +48,7 @@ export default function About() {
             </button>
           </div>
         </div>
+        <OurGallery />
         <div className="grid md:grid-cols-3 gap-4 mt-5">
           <h3 className="col-span-full w-full flex justify-center font-normal text-3xl md:text-5xl pb-4">
             Follow us on INSTAGRAM

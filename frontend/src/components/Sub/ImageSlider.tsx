@@ -1,14 +1,13 @@
 import { motion, useAnimation } from "framer-motion";
-import { useRef, useEffect, useState, forwardRef, useImperativeHandle } from "react";
+import {
+  useRef,
+  useEffect,
+  useState,
+  forwardRef,
+  useImperativeHandle,
+} from "react";
 
-const images = [
-  "Img20",
-  "Img21",
-  "Img22",
-  "Img23",
-  "Img24",
-  "Img25",
-];
+const images = ["Img20", "Img21", "Img22", "Img23", "Img24", "Img25"];
 
 export type ImageSliderHandle = {
   scrollLeft: () => void;
@@ -18,30 +17,39 @@ export type ImageSliderHandle = {
 const ImageSlider = forwardRef<ImageSliderHandle>((_, ref) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const controls = useAnimation();
-  const [position, setPosition] = useState(0);
+  const [x, setX] = useState(0);
   const [maxDrag, setMaxDrag] = useState(0);
   const [cardWidth, setCardWidth] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(0);
 
-  useEffect(() => {
+  const totalImages = images.length;
+
+  const updateDimensions = () => {
     if (containerRef.current) {
-      const scrollWidth = containerRef.current.scrollWidth;
-      const offsetWidth = containerRef.current.offsetWidth;
-      const maxScrollable = scrollWidth - offsetWidth;
-      setMaxDrag(maxScrollable);
+      const container = containerRef.current;
+      const scrollWidth = container.scrollWidth;
+      const offsetWidth = container.offsetWidth;
+      setMaxDrag(scrollWidth - offsetWidth);
 
-      const card = containerRef.current.querySelector("div");
+      const card = container.querySelector("div");
       if (card) {
         const width = (card as HTMLElement).offsetWidth + 32; // gap-8 = 32px
         setCardWidth(width);
       }
     }
-  }, []);
+  };
+
+  useEffect(() => {
+    if (imagesLoaded === totalImages) {
+      updateDimensions();
+    }
+  }, [imagesLoaded]);
 
   const scroll = (dir: "left" | "right") => {
-    let newPosition = position + (dir === "left" ? cardWidth : -cardWidth);
-    newPosition = Math.max(-maxDrag, Math.min(0, newPosition));
-    setPosition(newPosition);
-    controls.start({ x: newPosition });
+    let newX = x + (dir === "left" ? cardWidth : -cardWidth);
+    newX = Math.max(-maxDrag, Math.min(0, newX));
+    setX(newX);
+    controls.start({ x: newX });
   };
 
   useImperativeHandle(ref, () => ({
@@ -67,6 +75,7 @@ const ImageSlider = forwardRef<ImageSliderHandle>((_, ref) => {
             <img
               src={`/${img}.png`}
               alt={img}
+              onLoad={() => setImagesLoaded((prev) => prev + 1)}
               className="rounded-2xl w-full h-full object-cover pointer-events-none"
             />
           </motion.div>

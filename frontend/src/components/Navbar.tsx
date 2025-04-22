@@ -31,7 +31,7 @@ export default function Navbar() {
         transition={{ duration: 1, type: "spring" }} className="min-h-[80px] h-fit flex items-center justify-between px-[2vw]">
       <div className="flex">
         <img
-          src="/Sreeleathers_logo.png"
+          src="/Logo_Cropped.png"
           alt="Company-Logo"
           className="h-[120px] w-[170px] object-contain"
         />

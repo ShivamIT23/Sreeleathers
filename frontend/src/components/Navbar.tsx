@@ -33,7 +33,7 @@ export default function Navbar() {
         <img
           src="/Sreeleathers_logo.png"
           alt="Company-Logo"
-          className="h-[100px] w-[170px] object-contain"
+          className="h-[120px] w-[170px] object-contain"
         />
       </div>
       <div className=" md:flex h-full my-auto inter font-medium text-sm hidden">

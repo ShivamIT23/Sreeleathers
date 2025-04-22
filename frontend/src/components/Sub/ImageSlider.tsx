@@ -7,7 +7,7 @@ import {
   useImperativeHandle,
 } from "react";
 
-const images = ["Img20", "Img21", "Img22", "Img23", "Img24", "Img25"];
+const images = ["Img20", "Img2", "Img22", "Img1", "Img24", "Img3"];
 
 export type ImageSliderHandle = {
   scrollLeft: () => void;

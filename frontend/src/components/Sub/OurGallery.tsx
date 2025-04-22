@@ -7,7 +7,7 @@ export default function OurGallery() {
   return (
     <section
       id="about"
-      className="mb-[3vh] flex justify-center h-fit min-h-[60svh] w-[70svw]"
+      className="mb-[3vh] flex justify-center h-fit min-h-[20svh] w-[70svw]"
     >
       <div className="flex flex-col gap-6 py-10 px-4 sm:p-10 rounded-xl min-h-full h-fit w-full bg-white">
         <div className="flex justify-center font-normal w-full gap-4 max-h-fit">

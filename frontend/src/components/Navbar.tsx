@@ -28,12 +28,12 @@ export default function Navbar() {
     <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        transition={{ duration: 1, type: "spring" }} className="min-h-[80px] h-fit flex items-start justify-between py-4 px-[2vw]">
+        transition={{ duration: 1, type: "spring" }} className="min-h-[80px] h-fit flex items-center justify-between px-[2vw]">
       <div className="flex">
         <img
-          src="/Logo.png"
+          src="/Sreeleathers_logo.png"
           alt="Company-Logo"
-          className="h-[70px] w-[200px] object-cover -mt-[15px]"
+          className="h-[100px] w-[170px] object-contain"
         />
       </div>
       <div className=" md:flex h-full my-auto inter font-medium text-sm hidden">
